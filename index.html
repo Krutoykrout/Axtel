@@ -1,329 +1,215 @@
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#111820">
-<meta name="description" content="Таксопарк Акстел — подключение к Яндекс Про по всей России. Комиссия 1,5%, подключение за 5 минут, выплаты на карту, поддержка 24/7.">
-<title>АКСТЕЛ — таксопарк для водителей</title>
-<style>
-:root{
-  --bg:#e9ebee;
-  --surface:#f4f5f6;
-  --surface-2:#e1e4e8;
-  --dark:#111820;
-  --dark-2:#18222d;
-  --navy:#203552;
-  --navy-2:#2a456c;
-  --accent:#c86a46;
-  --accent-2:#b85b3b;
-  --text:#161c24;
-  --muted:#69717b;
-  --line:#d4d8dd;
-  --line-dark:rgba(255,255,255,.11);
-  --white:#f7f8f9;
-  --green:#5aa779;
-  --radius-lg:28px;
-  --radius-md:18px;
-  --shadow:0 18px 55px rgba(12,19,27,.08);
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-button{font:inherit;color:inherit}
-.container{width:min(1180px,calc(100% - 40px));margin:auto}
-
-.header{position:sticky;top:0;z-index:100;height:74px;background:rgba(17,24,32,.94);border-bottom:1px solid rgba(255,255,255,.07);backdrop-filter:blur(16px)}
-.nav{height:100%;display:flex;align-items:center;gap:28px}
-.brand{display:flex;align-items:center;gap:12px;min-width:max-content;color:var(--white)}
-.brand-box{width:36px;height:36px;border-radius:9px;background:#263a52;display:grid;place-items:center;font-weight:950;letter-spacing:-.05em}
-.brand-copy{display:flex;flex-direction:column;line-height:1}
-.brand-copy strong{font-size:19px;letter-spacing:-.03em}
-.brand-copy small{font-size:7px;letter-spacing:.24em;color:#8d9cad;margin-top:5px;font-weight:850}
-.navlinks{display:flex;align-items:center;gap:24px;margin-left:auto;color:#aab4c0;font-size:12px;font-weight:800}
-.navlinks a{position:relative;transition:color .2s ease}
-.navlinks a::after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:#d7dde5;transition:right .25s ease}
-.navlinks a:hover{color:#fff}
-.navlinks a:hover::after{right:0}
-.header-actions{display:flex;align-items:center;gap:9px}
-.btn{min-height:48px;padding:0 18px;border:1px solid transparent;border-radius:11px;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:13px;font-weight:900;transition:transform .22s ease,background .22s ease,border-color .22s ease,box-shadow .22s ease}
-.btn:hover{transform:translateY(-2px)}
-.btn-accent{background:var(--accent);color:#fff;box-shadow:0 9px 22px rgba(200,106,70,.17)}
-.btn-accent:hover{background:var(--accent-2)}
-.btn-light{background:var(--surface);color:var(--text);border-color:var(--line)}
-.btn-dark{background:var(--dark);color:#fff}
-.btn-ghost{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:#e9edf2}
-.menu{display:none;margin-left:auto;width:44px;height:44px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.04);border-radius:10px;color:#fff;font-size:22px;cursor:pointer}
-
-.hero{position:relative;background:linear-gradient(135deg,#111820 0%,#172231 58%,#1b2735 100%);color:var(--white);overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 77% 18%,rgba(91,115,150,.18),transparent 30%),radial-gradient(circle at 88% 82%,rgba(200,106,70,.06),transparent 27%);pointer-events:none}
-.hero::after{content:"АКСТЕЛ";position:absolute;right:-36px;bottom:-43px;font-size:190px;line-height:1;font-weight:950;letter-spacing:-.075em;color:rgba(255,255,255,.018);pointer-events:none}
-.hero-grid{min-height:620px;display:grid;grid-template-columns:1.12fr .88fr;gap:54px;position:relative;z-index:2;align-items:center}
-.hero-copy{padding:70px 0 82px}
-.kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 11px;border:1px solid rgba(255,255,255,.11);border-radius:999px;color:#bac5d1;background:rgba(255,255,255,.035);font-size:11px;font-weight:850}
-.kicker::before{content:"";width:7px;height:7px;border-radius:50%;background:#68a17f;box-shadow:0 0 0 4px rgba(104,161,127,.09)}
-h1{font-size:clamp(50px,6.2vw,84px);line-height:.94;letter-spacing:-.062em;margin:22px 0 20px;max-width:730px}
-.hero-copy>p{font-size:18px;line-height:1.62;color:#b4bfcb;max-width:650px;margin:0}
-.hero-copy>p strong{color:#fff}
-.hero-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.hero-links{display:flex;gap:18px;flex-wrap:wrap;margin-top:18px;color:#9fabba;font-size:12px;font-weight:850}
-.hero-links a{border-bottom:1px solid rgba(255,255,255,.23);padding-bottom:2px;transition:color .2s ease,border-color .2s ease}
-.hero-links a:hover{color:#fff;border-color:#fff}
-.hero-proof{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px;padding-top:22px;border-top:1px solid var(--line-dark);font-size:12px;color:#aab5c2;font-weight:750}
-.hero-proof span::before{content:"";width:6px;height:6px;border-radius:50%;background:#679775;display:inline-block;margin-right:7px;vertical-align:1px}
-
-.metric-panel{border-left:1px solid var(--line-dark);padding-left:42px}
-.metric-label{font-size:11px;text-transform:uppercase;letter-spacing:.16em;font-weight:900;color:#778ba3}
-.metric-main{font-size:132px;line-height:.82;letter-spacing:-.082em;font-weight:950;margin:23px 0 28px;color:#f2f4f7}
-.metric-main span{font-size:42px;color:#9aa9b8;letter-spacing:-.04em}
-.metric-list{border-top:1px solid var(--line-dark)}
-.metric-row{display:flex;justify-content:space-between;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.08);font-size:13px;color:#96a3b2}
-.metric-row b{color:#eef1f4;font-size:14px}
-.metric-offer{margin-top:18px;padding:15px 17px;border-radius:13px;background:#202c39;border:1px solid rgba(255,255,255,.07);display:flex;justify-content:space-between;align-items:center;gap:16px;color:#aab5c2;font-size:12px}
-.metric-offer strong{font-size:23px;color:#e5b29d;letter-spacing:-.04em}
-
-.stats-wrap{position:relative;z-index:5;margin-top:-38px}
-.stats{display:grid;grid-template-columns:repeat(4,1fr);background:#f0f2f4;border:1px solid #d9dde1;border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
-.stat{padding:25px 28px;border-right:1px solid #d8dce0}
-.stat:last-child{border-right:0}
-.stat strong{display:block;font-size:27px;letter-spacing:-.04em;color:#1d2a3a}
-.stat span{display:block;margin-top:4px;color:#747c86;font-size:12px}
-
-section{padding:78px 0}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:34px;margin-bottom:34px}
-.eyebrow{font-size:10px;text-transform:uppercase;letter-spacing:.17em;font-weight:950;color:#576d8d;margin-bottom:10px}
-h2{font-size:clamp(38px,4.7vw,60px);line-height:.98;letter-spacing:-.052em;margin:0}
-.section-head p{max-width:500px;margin:0;color:var(--muted);line-height:1.65}
-
-.services{background:#dfe2e6}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid #cfd4da;border-radius:20px;overflow:hidden;background:#eceef0}
-.service{padding:36px 32px 32px;border-right:1px solid #d2d6da;min-height:285px;display:flex;flex-direction:column;transition:background .25s ease,transform .25s ease}
-.service:last-child{border-right:0}
-.service:hover{background:#f2f3f4}
-.service-num{font-size:11px;color:#9098a2;font-weight:900;letter-spacing:.13em}
-.service h3{font-size:29px;letter-spacing:-.04em;margin:30px 0 10px}
-.service p{margin:0;color:#6e7681;font-size:14px;line-height:1.65}
-.service-foot{margin-top:auto;padding-top:24px;font-size:12px;font-weight:850;color:#26374c}
-.cta-line{margin-top:22px;border:1px solid #cfd4da;background:#d5d9de;border-radius:16px;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:22px}
-.cta-line strong{font-size:22px;letter-spacing:-.03em}
-.cta-line p{margin:4px 0 0;color:#6e7681;font-size:13px}
-.cta-line .actions{display:flex;gap:8px;flex-wrap:wrap}
-
-.benefits{background:#171f28;color:#edf1f4}
-.benefit-shell{display:grid;grid-template-columns:.76fr 1.24fr;gap:48px;align-items:start}
-.benefit-copy{position:sticky;top:108px}
-.benefit-copy .eyebrow{color:#879ab2}
-.benefit-copy p{color:#9eabb8;line-height:1.68;max-width:420px;margin:18px 0 0}
-.benefit-list{border:1px solid rgba(255,255,255,.09);border-radius:20px;overflow:hidden;background:#141b23}
-.benefit-item{display:grid;grid-template-columns:66px 1fr auto;align-items:center;gap:18px;padding:24px 25px;border-bottom:1px solid rgba(255,255,255,.075);transition:background .2s ease}
-.benefit-item:last-child{border-bottom:0}
-.benefit-item:hover{background:#18212b}
-.benefit-index{font-size:11px;letter-spacing:.13em;color:#687687;font-weight:900}
-.benefit-item h3{margin:0 0 5px;font-size:17px;letter-spacing:-.02em}
-.benefit-item p{margin:0;color:#8f9ba8;font-size:13px;line-height:1.5}
-.benefit-mark{width:29px;height:29px;border:1px solid rgba(255,255,255,.13);border-radius:50%;display:grid;place-items:center;color:#7994b8;font-size:12px;font-weight:900}
-
-.process-sec{background:#e9ebee}
-.process{border:1px solid #cfd4da;background:#f0f2f4;border-radius:22px;padding:44px}
-.process .section-head{margin-bottom:28px}
-.process .section-head p{color:#6b747f}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #d5d9dd}
-.step{padding:28px 24px 5px 0;margin-right:24px;border-right:1px solid #d5d9dd}
-.step:last-child{border-right:0;margin-right:0}
-.step b{display:block;font-size:11px;color:#6c7e96;letter-spacing:.13em;margin-bottom:28px}
-.step h3{font-size:19px;margin:0 0 8px}
-.step p{font-size:13px;line-height:1.55;color:#6d7580;margin:0}
-.process-contact{margin-top:34px;padding-top:24px;border-top:1px solid #d5d9dd;display:flex;justify-content:space-between;align-items:center;gap:20px}
-.process-contact strong{font-size:22px}
-.process-contact .actions{display:flex;gap:8px;flex-wrap:wrap}
-
-.offer{background:#dfe2e6}
-.offer-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:18px}
-.offer-main{background:#eff1f3;border:1px solid #ccd2d8;border-radius:20px;padding:38px}
-.offer-main h2{font-size:50px}
-.offer-main p{color:#6d7580;line-height:1.65;max-width:720px}
-.tags{display:flex;flex-wrap:wrap;gap:7px;margin:23px 0 28px}
-.tag{border:1px solid #cdd2d8;background:#e4e7ea;border-radius:999px;padding:9px 13px;font-size:11px;font-weight:850;color:#52606e}
-.partner-card{background:#18222d;color:#edf1f5;border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:38px;display:flex;flex-direction:column;justify-content:space-between}
-.partner-card .eyebrow{color:#8497af}
-.partner-card .big{font-size:96px;line-height:.86;letter-spacing:-.075em;font-weight:950;margin:15px 0 14px;color:#e6ebf0}
-.partner-card p{color:#9aa7b4;line-height:1.6;margin:0 0 26px}
-
-.faq-sec{background:#e9ebee}
-.faq{display:grid;grid-template-columns:.72fr 1.28fr;gap:50px;align-items:start}
-.faq-copy{position:sticky;top:108px}
-.faq-copy p{color:#6b747f;line-height:1.62;margin:16px 0 22px}
-details{border-top:1px solid #d1d5da}
-details:last-child{border-bottom:1px solid #d1d5da}
-summary{list-style:none;cursor:pointer;padding:21px 48px 21px 0;font-weight:900;position:relative}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:0;top:16px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:1px solid #cbd0d5;color:#46576b;font-size:17px;transition:transform .22s ease,background .22s ease}
-details[open] summary::after{content:"−";transform:rotate(180deg);background:#dde1e5}
-details p{color:#6b747f;font-size:14px;line-height:1.62;margin:0 0 21px;max-width:780px}
-
-.final{background:#111820;color:#f2f4f6;padding:68px 0}
-.final-grid{display:grid;grid-template-columns:1fr .9fr;gap:52px;align-items:center}
-.final .eyebrow{color:#8497af}
-.final h2{font-size:56px}
-.final p{color:#9ba7b4;font-size:16px;line-height:1.62;max-width:610px}
-.final .phone{display:inline-block;margin-top:14px;font-size:33px;font-weight:950;letter-spacing:-.04em;color:#f3f5f7}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-.contact-btn{min-height:82px;border:1px solid rgba(255,255,255,.09);background:#18222d;border-radius:13px;padding:16px 17px;display:flex;flex-direction:column;justify-content:center;transition:transform .2s ease,background .2s ease}
-.contact-btn:hover{transform:translateY(-2px);background:#1d2935}
-.contact-btn b{font-size:15px;margin-bottom:5px;color:#f2f4f6}
-.contact-btn span{font-size:12px;color:#8f9ca9}
-.contact-btn.accent{background:#bd6444;border-color:#bd6444}
-.contact-btn.accent span{color:#f0d3c7}
-
-footer{background:#0d131a;color:#7f8b98;padding:27px 0 92px;border-top:1px solid rgba(255,255,255,.06)}
-.footer{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:12px}
-.footer strong{color:#d8dde2}
-.mobile-cta{display:none}
-
-/* motion */
-.hero .kicker,.hero h1,.hero-copy>p,.hero-actions,.hero-links,.hero-proof,.metric-panel{opacity:0;transform:translateY(18px);animation:heroIn .7s cubic-bezier(.2,.7,.2,1) forwards}
-.hero h1{animation-delay:.08s}.hero-copy>p{animation-delay:.16s}.hero-actions{animation-delay:.24s}.hero-links{animation-delay:.3s}.hero-proof{animation-delay:.36s}.metric-panel{animation-delay:.18s}
-@keyframes heroIn{to{opacity:1;transform:none}}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s cubic-bezier(.2,.7,.2,1),transform .65s cubic-bezier(.2,.7,.2,1)}
-.reveal.show{opacity:1;transform:none}
-.reveal[data-delay="1"]{transition-delay:.08s}.reveal[data-delay="2"]{transition-delay:.16s}.reveal[data-delay="3"]{transition-delay:.24s}
-.stat,.service,.benefit-item,.step,.contact-btn{will-change:transform}
-
-@media(max-width:980px){
-  .navlinks{display:none}.header-actions .btn-light{display:none}.menu{display:block}
-  .navlinks.open{display:flex;position:fixed;top:74px;left:0;right:0;margin:0;background:#111820;border-top:1px solid rgba(255,255,255,.08);padding:18px 20px 24px;flex-direction:column;align-items:flex-start;gap:18px;box-shadow:0 24px 38px rgba(0,0,0,.2)}
-  .navlinks.open a{font-size:15px;color:#d9dfe5;width:100%;padding:5px 0}
-  .hero-grid{grid-template-columns:1fr;gap:0}.hero-copy{padding:58px 0 34px}.metric-panel{border-left:0;border-top:1px solid var(--line-dark);padding:30px 0 80px;display:grid;grid-template-columns:.8fr 1.2fr;gap:34px;align-items:end}.metric-main{font-size:118px;margin-bottom:0}.metric-list{margin-top:0}.metric-offer{grid-column:1/-1;margin-top:0}
-  .stats-wrap{margin-top:-34px}
-  .service-grid{grid-template-columns:1fr}.service{border-right:0;border-bottom:1px solid #d2d6da;min-height:205px}.service:last-child{border-bottom:0}
-  .benefit-shell,.offer-grid,.faq,.final-grid{grid-template-columns:1fr}.benefit-copy,.faq-copy{position:static}.steps{grid-template-columns:1fr 1fr}.step:nth-child(2){border-right:0}.step:nth-child(-n+2){border-bottom:1px solid #d5d9dd;padding-bottom:25px}.contact-grid{grid-template-columns:1fr 1fr}
-}
-
-@media(max-width:650px){
-  .container{width:min(100% - 24px,1180px)}
-  .header{height:64px}.brand-box{width:34px;height:34px}.brand-copy strong{font-size:18px}.nav{gap:10px}.header-actions{display:none}.menu{display:block;width:42px;height:42px}.navlinks.open{top:64px}
-  .hero::after{font-size:92px;right:-18px;bottom:10px}.hero-grid{min-height:auto}.hero-copy{padding:38px 0 27px}.kicker{font-size:10px;padding:7px 10px}h1{font-size:46px;line-height:.95;margin:18px 0 16px}.hero-copy>p{font-size:15px;line-height:1.58}.hero-actions{display:grid;grid-template-columns:1fr;margin-top:24px}.hero-actions .btn{width:100%}.hero-links{gap:13px;font-size:11px}.hero-proof{display:grid;grid-template-columns:1fr 1fr;gap:10px 14px;margin-top:22px;padding-top:18px}
-  .metric-panel{display:block;padding:24px 0 65px}.metric-label{margin-top:4px}.metric-main{font-size:86px;margin:19px 0 23px}.metric-main span{font-size:30px}.metric-row{padding:13px 0;font-size:12px}.metric-row b{font-size:12px}.metric-offer{padding:13px 14px}.metric-offer strong{font-size:20px}
-  .stats-wrap{margin-top:-27px}.stats{grid-template-columns:1fr 1fr;border-radius:14px}.stat{padding:17px;border-right:1px solid #d8dce0}.stat:nth-child(2){border-right:0}.stat:nth-child(-n+2){border-bottom:1px solid #d8dce0}.stat strong{font-size:22px}.stat span{font-size:11px}
-  section{padding:50px 0}.section-head{display:block;margin-bottom:25px}.section-head p{margin-top:13px;font-size:14px}h2{font-size:39px}.service{padding:26px 21px;min-height:200px}.service h3{font-size:26px;margin-top:22px}.cta-line{display:block;padding:20px}.cta-line strong{font-size:20px}.cta-line .actions{display:grid;grid-template-columns:1fr;margin-top:15px}.cta-line .btn{width:100%}
-  .benefit-shell{gap:22px}.benefit-item{grid-template-columns:42px 1fr;padding:19px 17px;gap:10px}.benefit-mark{display:none}.benefit-item h3{font-size:16px}.benefit-item p{font-size:12px}
-  .process{padding:26px 19px}.steps{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid #d5d9dd!important;margin:0!important;padding:22px 0!important}.step:last-child{border-bottom:0!important}.step b{margin-bottom:14px}.process-contact{display:block}.process-contact strong{font-size:20px}.process-contact .actions{display:grid;grid-template-columns:1fr;margin-top:14px}.process-contact .btn{width:100%}
-  .offer-main,.partner-card{padding:27px 20px}.offer-main h2{font-size:39px}.partner-card .big{font-size:72px}.faq{gap:25px}.faq-copy .btn{width:100%}summary{padding-right:42px;font-size:14px}.final{padding:54px 0}.final h2{font-size:40px}.final .phone{font-size:26px}.contact-grid{grid-template-columns:1fr}.contact-btn{min-height:74px}.footer{display:block;line-height:1.9}
-  .mobile-cta{display:grid;grid-template-columns:1fr 1fr;gap:7px;position:fixed;left:9px;right:9px;bottom:max(9px,env(safe-area-inset-bottom));z-index:120;background:rgba(17,24,32,.95);backdrop-filter:blur(14px);padding:7px;border:1px solid rgba(255,255,255,.09);border-radius:14px;box-shadow:0 18px 44px rgba(0,0,0,.25)}.mobile-cta .btn{width:100%;min-height:47px;padding:0 10px;font-size:12px}
-  body{padding-bottom:74px}
-}
-
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero .kicker,.hero h1,.hero-copy>p,.hero-actions,.hero-links,.hero-proof,.metric-panel{animation:none;opacity:1;transform:none}.reveal{opacity:1;transform:none;transition:none}.btn,.service,.benefit-item,.contact-btn{transition:none}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0a0a0a">
+  <meta name="description" content="АКСТЕЛ — подключение водителей к Яндекс Про. Комиссия 1,5%, новым водителям 5 дней без комиссии.">
+  <title>АКСТЕЛ — таксопарк для водителей</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-<header class="header">
-  <div class="container nav">
-    <a class="brand" href="#top" aria-label="Акстел"><span class="brand-box">A</span><span class="brand-copy"><strong>АКСТЕЛ</strong><small>ТАКСОПАРК</small></span></a>
-    <nav class="navlinks" id="navlinks"><a href="#services">Сервисы</a><a href="#benefits">Преимущества</a><a href="#connect">Подключение</a><a href="#faq">Вопросы</a><a href="#contacts">Контакты</a></nav>
-    <div class="header-actions"><a class="btn btn-ghost" href="tel:+79151212266">+7 915 121-22-66</a><a class="btn btn-accent" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Написать менеджеру</a></div>
-    <button class="menu" id="menuBtn" aria-label="Открыть меню" aria-expanded="false">☰</button>
-  </div>
-</header>
-<main id="top">
-<section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-copy">
-      <div class="kicker">Подключение водителей по всей России</div>
-      <h1>Работай в Яндекс Про на своих условиях.</h1>
-      <p>Таксопарк <strong>«Акстел»</strong>: подключение без самозанятости, выплаты на карту, свободный график и поддержка водителей 24/7.</p>
-      <div class="hero-actions"><a class="btn btn-accent" href="tel:+79151212266">Позвонить сейчас</a><a class="btn btn-ghost" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Написать в Telegram</a></div>
-      <div class="hero-links"><a href="https://wa.me/79151212266" target="_blank" rel="noopener">WhatsApp</a><a href="https://max.ru/u/f9LHodD0cOIIYZGRAkL9fDt8EANLRzJccA7bU6jWePQAfbkvQi9bXg_OZ2U" target="_blank" rel="noopener">MAX</a><a href="tel:+79151212266">+7 915 121-22-66</a></div>
-      <div class="hero-proof"><span>Подключение ≈ 5 минут</span><span>Свой или арендный авто</span><span>Без штрафов парка</span><span>Поддержка 24/7</span></div>
-    </div>
-    <aside class="metric-panel" aria-label="Основные условия">
-      <div>
-        <div class="metric-label">Комиссия таксопарка</div>
-        <div class="metric-main"><span class="counter" data-value="1.5" data-decimals="1">1,5</span><span>%</span></div>
+  <header class="header" id="top">
+    <div class="shell header__inner">
+      <a class="logo" href="#top" aria-label="АКСТЕЛ — наверх">
+        <span class="logo__text">АКСТЕЛ<small>таксопарк</small></span>
+      </a>
+
+      <nav class="nav" aria-label="Основная навигация">
+        <a href="#work">Направления</a>
+        <a href="#why">Условия</a>
+        <a href="#start">Подключение</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <a class="header__phone" href="tel:+79151212266">+7 915 121-22-66</a>
+        <a class="button button--yellow button--small" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Подключиться</a>
       </div>
-      <div class="metric-list">
-        <div class="metric-row"><span>Регистрация</span><b>дистанционно</b></div>
-        <div class="metric-row"><span>Поддержка</span><b>24 / 7</b></div>
-        <div class="metric-row"><span>География</span><b>вся Россия</b></div>
+
+      <button class="menu" type="button" aria-label="Открыть меню" aria-expanded="false"><span></span><span></span></button>
+    </div>
+
+    <div class="mobile-nav" hidden>
+      <a href="#work">Направления</a>
+      <a href="#why">Условия</a>
+      <a href="#start">Подключение</a>
+      <a href="#faq">FAQ</a>
+      <a href="tel:+79151212266">+7 915 121-22-66</a>
+      <a class="button button--yellow" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Написать менеджеру</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero__photo" role="img" aria-label="Такси в ночном городе"></div>
+      <div class="hero__shade"></div>
+      <div class="shell hero__content">
+        <div class="hero__copy reveal">
+          <p class="overline">Яндекс Про — вся Россия</p>
+          <h1>Выходи<br>на линию.</h1>
+          <p class="hero__sub">Подключение <b>за 5 минут</b>. Без офиса.</p>
+          <div class="hero__buttons">
+            <a class="button button--yellow button--big" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Подключиться</a>
+            <a class="button button--glass button--big" href="tel:+79151212266">Позвонить</a>
+          </div>
+        </div>
+
+        <div class="hero__offer reveal">
+          <span>Комиссия парка</span>
+          <strong>1,5<sup>%</sup></strong>
+          <div class="hero__offer-bottom"><b>5 дней — 0%</b><small>для новых водителей</small></div>
+        </div>
       </div>
-      <div class="metric-offer"><span>Для новых водителей</span><strong>5 дней 0%</strong></div>
-    </aside>
-  </div>
-</section>
-<div class="stats-wrap"><div class="container"><div class="stats reveal"><div class="stat"><strong>1,5%</strong><span>комиссия парка</span></div><div class="stat"><strong>5 минут</strong><span>подключение онлайн</span></div><div class="stat"><strong>24/7</strong><span>поддержка водителей</span></div><div class="stat"><strong>Вся РФ</strong><span>работа по России</span></div></div></div></div>
 
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-head reveal"><div><div class="eyebrow">Сервисы Яндекс Про</div><h2>Один парк.<br>Несколько направлений.</h2></div><p>Подключаем к такси, доставке и грузовым заказам. Можно работать в одном направлении или совмещать несколько.</p></div>
-    <div class="service-grid">
-      <article class="service reveal" data-delay="1"><div class="service-num">01 / ТАКСИ</div><h3>Поездки</h3><p>Эконом, Комфорт, Комфорт+, Business и Premier. Свободный график, свой или арендный автомобиль.</p><div class="service-foot">Все основные классы</div></article>
-      <article class="service reveal" data-delay="2"><div class="service-num">02 / ДОСТАВКА</div><h3>Курьер на авто</h3><p>Подключение к заказам Яндекс Доставки. Подходит для работы на личном автомобиле и совмещения с такси.</p><div class="service-foot">Доставка через Яндекс Про</div></article>
-      <article class="service reveal" data-delay="3"><div class="service-num">03 / ГРУЗОВОЙ</div><h3>Грузовой + Межгород</h3><p>Грузовые и межгородние заказы при доступности тарифа в вашем регионе. Больше сценариев для заработка.</p><div class="service-foot">Работа по всей России</div></article>
-    </div>
-    <div class="cta-line reveal"><div><strong>Хотите подключиться сегодня?</strong><p>Никаких анкет на сайте — сразу свяжитесь с менеджером.</p></div><div class="actions"><a class="btn btn-light" href="tel:+79151212266">Позвонить</a><a class="btn btn-dark" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Telegram</a></div></div>
-  </div>
-</section>
+      <div class="hero__bottom shell">
+        <div><strong>5 мин</strong><span>подключение</span></div>
+        <div><strong>24/7</strong><span>поддержка</span></div>
+        <div><strong>0 ₽</strong><span>штрафов парка</span></div>
+        <a href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Telegram</a>
+      </div>
+    </section>
 
-<section class="benefits" id="benefits">
-  <div class="container benefit-shell">
-    <div class="benefit-copy reveal"><div class="eyebrow">Почему Акстел</div><h2>Без мелкого шрифта.</h2><p>Только то, что реально важно водителю: понятная комиссия, быстрые выплаты, связь с парком и помощь при подключении.</p></div>
-    <div class="benefit-list reveal">
-      <div class="benefit-item"><div class="benefit-index">01</div><div><h3>Моментальные выплаты</h3><p>Вывод заработка на банковскую карту через Яндекс Про.</p></div><div class="benefit-mark">✓</div></div>
-      <div class="benefit-item"><div class="benefit-index">02</div><div><h3>Подключение без самозанятости</h3><p>Менеджер подскажет подходящий вариант оформления при регистрации.</p></div><div class="benefit-mark">✓</div></div>
-      <div class="benefit-item"><div class="benefit-index">03</div><div><h3>Повышенный приоритет и бонусы</h3><p>Помогаем использовать доступные механики и цели агрегатора.</p></div><div class="benefit-mark">✓</div></div>
-      <div class="benefit-item"><div class="benefit-index">04</div><div><h3>Никаких штрафов от таксопарка</h3><p>Без придуманных удержаний и скрытых списаний со стороны парка.</p></div><div class="benefit-mark">✓</div></div>
-      <div class="benefit-item"><div class="benefit-index">05</div><div><h3>Переход из другого парка</h3><p>Помогаем сохранить профиль, рейтинг и рабочую историю.</p></div><div class="benefit-mark">✓</div></div>
-      <div class="benefit-item"><div class="benefit-index">06</div><div><h3>Помощь с документами</h3><p>Консультации по разрешению перевозчика, ФГИС и ЭЦП.</p></div><div class="benefit-mark">✓</div></div>
-      <div class="benefit-item"><div class="benefit-index">07</div><div><h3>Поддержка 24/7</h3><p>Можно написать или позвонить в любое время, а не только в рабочие часы.</p></div><div class="benefit-mark">✓</div></div>
-    </div>
-  </div>
-</section>
+    <section class="work" id="work">
+      <div class="shell">
+        <div class="section-title reveal">
+          <p class="overline overline--dark">Один парк — три направления</p>
+          <h2>Выбирай,<br>как зарабатывать.</h2>
+        </div>
 
-<section class="process-sec" id="connect">
-  <div class="container">
-    <div class="process reveal">
-      <div class="section-head"><div><div class="eyebrow">Как начать</div><h2>Три шага до линии.</h2></div><p>Весь процесс дистанционный. Менеджер ведёт вас от первого сообщения до активации.</p></div>
-      <div class="steps"><div class="step"><b>01</b><h3>Свяжитесь с нами</h3><p>Позвоните или напишите в Telegram, WhatsApp или MAX.</p></div><div class="step"><b>02</b><h3>Регистрация</h3><p>Передаёте данные, менеджер проверяет и регистрирует вас.</p></div><div class="step"><b>03</b><h3>Выход на линию</h3><p>Выбираете тариф и начинаете принимать заказы.</p></div><div class="step"><b>≈ 5 МИН</b><h3>Без визита в офис</h3><p>Подключение проходит удалённо из любого региона России.</p></div></div>
-      <div class="process-contact"><strong>Можно начать уже сегодня.</strong><div class="actions"><a class="btn btn-accent" href="tel:+79151212266">Позвонить</a><a class="btn btn-light" href="https://wa.me/79151212266" target="_blank" rel="noopener">WhatsApp</a></div></div>
-    </div>
-  </div>
-</section>
+        <div class="photo-grid">
+          <article class="photo-card photo-card--taxi reveal">
+            <div class="photo-card__shade"></div>
+            <div class="photo-card__top"><span>01</span><span>Яндекс Про</span></div>
+            <div class="photo-card__copy"><h3>Такси</h3><p>Эконом — Premier</p></div>
+          </article>
 
-<section class="offer">
-  <div class="container offer-grid">
-    <div class="offer-main reveal"><div class="eyebrow">Стартовый оффер</div><h2>5 дней без комиссии парка.</h2><p>Попробуйте работу с «Акстел» и оцените поддержку. После льготного периода комиссия парка составляет <strong>1,5%</strong>.</p><div class="tags"><span class="tag">Эконом</span><span class="tag">Комфорт</span><span class="tag">Комфорт+</span><span class="tag">Business</span><span class="tag">Premier</span><span class="tag">Межгород</span><span class="tag">Доставка</span><span class="tag">Грузовой</span></div><a class="btn btn-dark" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Уточнить условия в Telegram</a></div>
-    <div class="partner-card reveal" data-delay="1"><div><div class="eyebrow">Партнёрская программа</div><div class="big">0,5%</div><p>от дохода приглашённых водителей — на постоянной основе по условиям партнёрской программы.</p></div><a class="btn btn-accent" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Узнать условия партнёрки</a></div>
-  </div>
-</section>
+          <article class="photo-card photo-card--delivery reveal">
+            <div class="photo-card__shade"></div>
+            <div class="photo-card__top"><span>02</span><span>На авто</span></div>
+            <div class="photo-card__copy"><h3>Доставка</h3><p>Можно совмещать</p></div>
+          </article>
 
-<section class="faq-sec" id="faq">
-  <div class="container faq">
-    <div class="faq-copy reveal"><div class="eyebrow">Вопросы</div><h2>Коротко о главном.</h2><p>Если нужного ответа нет — просто напишите менеджеру. Без формы и ожидания обратного звонка.</p><a class="btn btn-dark" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Задать вопрос</a></div>
-    <div class="reveal"><details open><summary>Нужна ли самозанятость?</summary><p>Подключение возможно без оформления самозанятости. Конкретный вариант менеджер уточнит при регистрации.</p></details><details><summary>Можно работать на своей машине?</summary><p>Да. Подключаем водителей на личных и арендных автомобилях при соответствии требованиям выбранного тарифа.</p></details><details><summary>Сколько занимает подключение?</summary><p>При готовых данных дистанционная регистрация обычно занимает около 5 минут.</p></details><details><summary>Сохранится ли рейтинг при переходе?</summary><p>Менеджер поможет выполнить переход корректно и сохранить рабочий профиль, рейтинг и историю.</p></details><details><summary>Есть ли тариф «Межгород»?</summary><p>Да, при доступности тарифа в вашем регионе можно подключиться к межгородним заказам.</p></details><details><summary>Какая комиссия парка?</summary><p>Комиссия «Акстел» — 1,5%. Для новых подключений действует оффер «5 дней без комиссии парка».</p></details></div>
-  </div>
-</section>
+          <article class="photo-card photo-card--cargo reveal">
+            <div class="photo-card__shade"></div>
+            <div class="photo-card__top"><span>03</span><span>Город + межгород</span></div>
+            <div class="photo-card__copy"><h3>Грузовой</h3><p>Больше сценариев</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<section class="final" id="contacts">
-  <div class="container final-grid">
-    <div class="reveal"><div class="eyebrow">Связь 24/7</div><h2>Не оставляйте заявку. Свяжитесь сразу.</h2><p>Позвоните или напишите — менеджер ответит по тарифам, документам, переходу из другого парка и подключению.</p><a class="phone" href="tel:+79151212266">+7 915 121-22-66</a></div>
-    <div class="contact-grid reveal" data-delay="1"><a class="contact-btn accent" href="tel:+79151212266"><b>Позвонить сейчас</b><span>Менеджер на связи 24/7</span></a><a class="contact-btn" href="https://t.me/axteltaxi1" target="_blank" rel="noopener"><b>Telegram</b><span>@axteltaxi1</span></a><a class="contact-btn" href="https://wa.me/79151212266" target="_blank" rel="noopener"><b>WhatsApp</b><span>Написать менеджеру</span></a><a class="contact-btn" href="https://max.ru/u/f9LHodD0cOIIYZGRAkL9fDt8EANLRzJccA7bU6jWePQAfbkvQi9bXg_OZ2U" target="_blank" rel="noopener"><b>MAX</b><span>Открыть чат</span></a></div>
-  </div>
-</section>
-</main>
-<footer><div class="container footer"><div><strong>АКСТЕЛ</strong> · Таксопарк для водителей</div><div>Подключение к сервисам Яндекс Про · Россия</div><div>© <span id="year"></span></div></div></footer>
-<div class="mobile-cta"><a class="btn btn-ghost" href="tel:+79151212266">Позвонить</a><a class="btn btn-accent" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Написать</a></div>
-<script>
-const year=document.getElementById('year');year.textContent=new Date().getFullYear();
-const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('show');observer.unobserve(entry.target)}})},{threshold:.08,rootMargin:'0px 0px -4% 0px'});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-const menuBtn=document.getElementById('menuBtn');const nav=document.getElementById('navlinks');
-function closeMenu(){nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');menuBtn.textContent='☰'}
-menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));menuBtn.textContent=open?'×':'☰'});
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMenu));
-window.addEventListener('resize',()=>{if(window.innerWidth>980)closeMenu()});
-if(!reduce){document.querySelectorAll('.counter').forEach(el=>{const target=parseFloat(el.dataset.value||'0'),dec=Number(el.dataset.decimals||0);let started=false;const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting&&!started){started=true;const t0=performance.now(),dur=850;const tick=t=>{const p=Math.min((t-t0)/dur,1),ease=1-Math.pow(1-p,3),v=target*ease;el.textContent=v.toFixed(dec).replace('.',',');if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick);obs.disconnect()}})},{threshold:.4});obs.observe(el)})}
-</script>
+    <section class="zero-block">
+      <div class="shell zero-block__inner">
+        <div class="zero-block__copy reveal">
+          <p class="overline">Стартовый оффер</p>
+          <h2>5 дней<br><span>без комиссии.</span></h2>
+          <p>Дальше — фиксированные <b>1,5%</b>.</p>
+          <a class="button button--black button--big" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Забрать 0%</a>
+        </div>
+        <div class="zero-block__number reveal">0<span>%</span></div>
+      </div>
+    </section>
+
+    <section class="why" id="why">
+      <div class="shell why__grid">
+        <div class="why__sticky reveal">
+          <p class="overline">Без мелкого шрифта</p>
+          <h2>Что важно<br>водителю.</h2>
+          <p class="why__lead">Без длинных условий и скрытых удержаний.</p>
+        </div>
+
+        <div class="why__list reveal">
+          <article><span>01</span><h3>Выплаты на карту</h3></article>
+          <article><span>02</span><h3>Без штрафов парка</h3></article>
+          <article><span>03</span><h3>Поддержка 24/7</h3></article>
+          <article><span>04</span><h3>Помощь с документами</h3></article>
+          <article><span>05</span><h3>Переход из другого парка</h3></article>
+          <article><span>06</span><h3>Работа по всей России</h3></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="drive-photo">
+      <div class="drive-photo__image" role="img" aria-label="Водитель в автомобиле ночью"></div>
+      <div class="drive-photo__shade"></div>
+      <div class="shell drive-photo__content reveal">
+        <span>Свободный график</span>
+        <h2>Твой автомобиль.<br>Твоё время.</h2>
+      </div>
+    </section>
+
+    <section class="start" id="start">
+      <div class="shell">
+        <div class="section-title section-title--row reveal">
+          <div><p class="overline overline--dark">Как начать</p><h2>3 шага.<br>5 минут.</h2></div>
+          <p>Весь процесс дистанционно.</p>
+        </div>
+
+        <div class="steps reveal">
+          <article><span>01</span><h3>Напиши</h3><p>Telegram, WhatsApp или MAX</p></article>
+          <div class="steps__arrow" aria-hidden="true"></div>
+          <article><span>02</span><h3>Данные</h3><p>Менеджер всё проверит</p></article>
+          <div class="steps__arrow" aria-hidden="true"></div>
+          <article class="steps__last"><span>03</span><h3>На линию</h3><p>Принимай заказы</p></article>
+        </div>
+
+        <div class="start__cta reveal">
+          <div><span>Без визита в офис</span><strong>Можно начать сегодня.</strong></div>
+          <a class="round-link" href="https://t.me/axteltaxi1" target="_blank" rel="noopener" aria-label="Подключиться">Старт</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="partner">
+      <div class="partner__photo" role="img" aria-label="Автомобиль в движении"></div>
+      <div class="partner__shade"></div>
+      <div class="shell partner__content reveal">
+        <p class="overline">Партнёрская программа</p>
+        <div class="partner__line">
+          <h2>Приглашай<br>водителей.</h2>
+          <strong>0,5<span>%</span></strong>
+        </div>
+        <p>Получай от дохода приглашённых — по условиям программы.</p>
+        <a class="button button--glass button--big" href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Узнать условия</a>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="shell faq__grid">
+        <div class="section-title reveal">
+          <p class="overline overline--dark">FAQ</p>
+          <h2>Коротко<br>о главном.</h2>
+        </div>
+        <div class="faq__items reveal">
+          <details><summary>Нужна ли самозанятость?<span>+</span></summary><p>Подключение возможно без самозанятости. Вариант оформления менеджер уточнит при регистрации.</p></details>
+          <details><summary>Можно на своей машине?<span>+</span></summary><p>Да. Подключаем личные и арендные автомобили при соответствии требованиям тарифа.</p></details>
+          <details><summary>Сколько занимает подключение?<span>+</span></summary><p>При готовых данных регистрация обычно занимает около 5 минут.</p></details>
+          <details><summary>Какая комиссия?<span>+</span></summary><p>1,5%. Для новых водителей первые 5 дней — без комиссии парка.</p></details>
+          <details><summary>Сохранится рейтинг при переходе?<span>+</span></summary><p>Менеджер поможет корректно перейти и сохранить рабочий профиль, рейтинг и историю.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="shell contact__inner reveal">
+        <p class="overline">Менеджер на связи 24/7</p>
+        <h2>Не оставляй заявку.<br><span>Напиши сразу.</span></h2>
+        <a class="contact__phone" href="tel:+79151212266">+7 915 121-22-66</a>
+        <div class="contact__links">
+          <a href="https://t.me/axteltaxi1" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://wa.me/79151212266" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="https://max.ru/u/f9LHodD0cOIIYZGRAkL9fDt8EANLRzJccA7bU6jWePQAfbkvQi9bXg_OZ2U" target="_blank" rel="noopener">MAX</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__inner"><span>АКСТЕЛ — ТАКСОПАРК</span><span>Яндекс Про — Россия</span><span>© <span id="year"></span></span></div>
+  </footer>
+
+  <a class="mobile-cta" href="https://t.me/axteltaxi1" target="_blank" rel="noopener"><span>Подключиться</span></a>
 </body>
 </html>

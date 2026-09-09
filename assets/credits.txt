@@ -1,0 +1,14 @@
+Axtel photo assets
+
+All six website photo assets are bundled locally in assets/photos/.
+The page makes no external image requests.
+
+Files:
+- hero.jpg
+- taxi.jpg
+- delivery.jpg
+- cargo.jpg
+- drive.jpg
+- partner.jpg
+
+These images were created specifically for this project and included in the archive.
